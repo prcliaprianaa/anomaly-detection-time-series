@@ -1,4 +1,4 @@
-# 🔍 Anomaly Detection on Time Series Data
+# Anomaly Detection on Time Series Data
 
 > Comparing **Z-Score** and **Moving Average** methods for anomaly detection on KPI (Key Performance Indicator) time series data.
 >
@@ -12,18 +12,18 @@
 
 ---
 
-## 📋 Overview
+## Overview
 
 Project ini bertujuan untuk membandingkan dua metode statistik sederhana — **Z-Score** dan **Moving Average** — dalam mendeteksi anomali pada data time series KPI. Tujuannya adalah memahami kelebihan dan keterbatasan masing-masing metode dalam konteks deteksi anomali.
 
-**🎯 Goals:**
+**Goals:**
 - Memahami karakteristik data KPI time series melalui EDA
 - Mengimplementasikan dua pendekatan statistik untuk anomaly detection
 - Membandingkan sensitivitas dan stabilitas kedua metode
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 Dataset yang digunakan berasal dari **NetManAIOps – KPI Anomaly Detection**:
 
@@ -42,7 +42,7 @@ Dataset yang digunakan berasal dari **NetManAIOps – KPI Anomaly Detection**:
 
 ---
 
-## 🛠️ Tools & Libraries
+## Tools & Libraries
 
 - **Python 3** — Core programming language
 - **Pandas** — Data manipulation & preprocessing
@@ -52,25 +52,25 @@ Dataset yang digunakan berasal dari **NetManAIOps – KPI Anomaly Detection**:
 
 ---
 
-## 🧠 Methodology
+## Methodology
 
-### 1️⃣ Data Loading & Preprocessing
+### 1. Data Loading & Preprocessing
 - Convert `timestamp` (Unix) ke format datetime
 - Sort data berdasarkan waktu
 - Handle missing values pada kolom `value`
 
-### 2️⃣ Exploratory Data Analysis (EDA)
+### 2. Exploratory Data Analysis (EDA)
 - Statistik deskriptif data KPI
 - Visualisasi pola time series
 
-### 3️⃣ Method 1 — Z-Score
+### 3. Method 1 — Z-Score
 Mendeteksi anomali berdasarkan standar deviasi dari mean. Data point dianggap anomali jika |Z-Score| > **threshold (3)**.
 
 ```
 Z = (x - μ) / σ
 ```
 
-### 4️⃣ Method 2 — Moving Average
+### 4. Method 2 — Moving Average
 Mendeteksi anomali berdasarkan deviasi dari nilai rata-rata bergerak (rolling mean) dengan **window = 20**. Data point dianggap anomali jika residual melebihi 3 × standar deviasi residual.
 
 ```
@@ -78,12 +78,12 @@ Residual = x - Moving Average
 Anomaly if |Residual| > 3 × σ(Residual)
 ```
 
-### 5️⃣ Comparison
+### 5. Comparison
 Perbandingan jumlah anomali yang terdeteksi oleh kedua metode, divisualisasikan dalam bar chart.
 
 ---
 
-## 💡 Key Findings
+## Key Findings
 
 | Aspect | Z-Score | Moving Average |
 |--------|---------|----------------|
@@ -92,13 +92,13 @@ Perbandingan jumlah anomali yang terdeteksi oleh kedua metode, divisualisasikan 
 | **Limitation** | Asumsi distribusi normal | Bergantung pada ukuran window |
 
 **Kesimpulan utama:**
-- ✅ **Z-Score** efektif untuk deteksi anomali ekstrem pada data dengan distribusi mendekati normal
-- ✅ **Moving Average** lebih cocok untuk data dengan tren/pola, karena lebih tahan terhadap noise
-- 🎯 Pemilihan metode bergantung pada karakteristik data dan kebutuhan sistem (sensitivitas vs stabilitas)
+- **Z-Score** efektif untuk deteksi anomali ekstrem pada data dengan distribusi mendekati normal
+- **Moving Average** lebih cocok untuk data dengan tren/pola, karena lebih tahan terhadap noise
+- Pemilihan metode bergantung pada karakteristik data dan kebutuhan sistem (sensitivitas vs stabilitas)
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 anomaly-detection-time-series/
@@ -109,7 +109,7 @@ anomaly-detection-time-series/
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Option 1: Open in Google Colab (Recommended)
 
@@ -137,14 +137,14 @@ jupyter notebook Riset_ISmile.ipynb
 
 ---
 
-## 📚 References
+## References
 
 - Chandola, V., Banerjee, A., & Kumar, V. (2009). *Anomaly Detection: A Survey*. ACM Computing Surveys.
 - NetManAIOps. *KPI Anomaly Detection Dataset*. [GitHub Repository](https://github.com/NetManAIOps/KPI-Anomaly-Detection)
 
 ---
 
-## 🎓 Project Context
+## Project Context
 
 Project ini dikerjakan secara individu sebagai bagian dari proses seleksi **Intelligent System and Machine Learning (I-SMILE) Laboratory** di Telkom University. Setelah berhasil menyelesaikan project ini, saya diterima sebagai **Laboratory Assistant** di I-SMILE Lab.
 
